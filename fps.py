@@ -12,4 +12,11 @@ background = background.convert() #for faster blitting
 screen.blit(background, (0, 0)) # attaxh background to screen
 pygame.display.flip() #update display
 
+for event in pygame.event.get():
+    if event.type == pygame.QUIT:
+        mainloop = False
+    elif event.type == pygame.KEYDOWN:
+        if event.key == pygame.K_ESCAPE:
+            mainloop = False
+
 time.sleep(2)
